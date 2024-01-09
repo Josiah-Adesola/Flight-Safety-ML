@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Flight-ML</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Flight Safety Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="time" placeholder="Time (Min-value=0, Max-value= 350)" required="required" /><br>
+    	<input type="text" name="speed" placeholder="Speed (Min-value=0, Max-value= 3000)" required="required" /><br>
+      <input type="text" name="torque" placeholder="Torque (Min-value=0, Max-value= 200)" required="required" /><br>
+      <input type="text" name="f1" placeholder="f1(Min-value=-100, Max-value= 100)" required="required" /><br>
+      <input type="text" name="f2" placeholder="f2 (Min-value=-100, Max-value= 100)" required="required" /><br>
+      <input type="text" name="f3" placeholder="f3 (Min-value=-100, Max-value= 100)" required="required" /><br>
+      <input type="text" name="f4" placeholder="f4 (Min-value=-100, Max-value= 100)" required="required" /><br>
+      <input type="text" name="f5" placeholder="f5 (Min-value=-100, Max-value= 100)" required="required" /><br>
+      <input type="text" name="f6" placeholder="f6 (Min-value=-100, Max-value= 100)" required="required" /><br>
+      <input type="text" name="f7" placeholder="f7 (Min-value=-100, Max-value= 100)" required="required" /><br>
+      <input type="text" name="f8" placeholder="f8 (Min-value=-100, Max-value= 100)" required="required" /><br>
+        
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
