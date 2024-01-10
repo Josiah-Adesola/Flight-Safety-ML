@@ -1,1 +1,10 @@
-runtime: python39
+runtime: python39  # Update this to the appropriate Python version
+
+entrypoint: gunicorn -b :$PORT app:app  # Update 'your_flask_app' to the actual name of your Flask app variable
+
+handlers:
+- url: /.*
+  script: auto
+
+env_variables:
+  FLASK_ENV: production
