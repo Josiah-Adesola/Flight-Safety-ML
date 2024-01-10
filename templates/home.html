@@ -17,7 +17,7 @@
 	<h1>Flight Safety Prediction</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
+    <form method="POST" action="{{ url_for('predict') }}">
       <input type="text" name="time" placeholder="Time (Min-value=0, Max-value= 350)" required="required" /><br>
     	<input type="text" name="speed" placeholder="Speed (Min-value=0, Max-value= 3000)" required="required" /><br>
       <input type="text" name="torque" placeholder="Torque (Min-value=0, Max-value= 200)" required="required" /><br>
